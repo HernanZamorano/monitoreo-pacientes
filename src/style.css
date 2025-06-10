@@ -1,20 +1,11 @@
 :root {
-  /* Paleta general verde/blanco */
-  --primary-green: #03a508;
-  --primary-green-dark: #388E3C;
-  --primary-green-light: #C8E6C9;
-  --text-dark: #26443d;
-  --text-light: #ffffff;
-  --bg-light: #ffffff;
-  --bg-dark: #0f2b2bce;
-
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--text-light);
-  background-color: var(--bg-dark);
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,11 +15,11 @@
 
 a {
   font-weight: 500;
-  color: var(--primary-green);
+  color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
-  color: var(--primary-green-dark);
+  color: #535bf2;
 }
 
 body {
@@ -51,13 +42,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--primary-green);
-  color: white;
+  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s, background-color 0.25s;
+  transition: border-color 0.25s;
 }
 button:hover {
-  background-color: var(--primary-green-dark);
+  border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
@@ -66,9 +56,6 @@ button:focus-visible {
 
 .card {
   padding: 2em;
-  background-color: var(--primary-green-light);
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 #app {
@@ -78,17 +65,15 @@ button:focus-visible {
   text-align: center;
 }
 
-/* Tema claro */
 @media (prefers-color-scheme: light) {
   :root {
-    color: var(--text-dark);
-    background-color: var(--bg-light);
+    color: #213547;
+    background-color: #ffffff;
   }
   a:hover {
-    color: var(--primary-green-dark);
+    color: #747bff;
   }
   button {
-    background-color: var(--primary-green);
-    color: white;
+    background-color: #f9f9f9;
   }
 }

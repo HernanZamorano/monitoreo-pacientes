@@ -10,7 +10,7 @@
       <ul>
         <li v-for="(registro, index) in historial" :key="index" class="registro">
           <h3>{{ registro.fecha }}</h3>
-          <p>Síntomas: {{ formatearSintomas(registro.sintomas) }}</p>
+          <p>Sintomas: {{ registro.sintomas }}</p>
           <SemaforoAlerta :sintomas="registro.sintomas" />
         </li>
       </ul>
@@ -32,22 +32,17 @@ interface RegistroSintomas {
 const historial = ref<RegistroSintomas[]>([])
 
 onMounted(() => {
+  // Obtener historial de localStorage
   const registrosGuardados = localStorage.getItem('historialSintomas')
   if (registrosGuardados) {
     historial.value = JSON.parse(registrosGuardados)
   }
 })
 
+// Almacenar un nuevo registro en el historial
 const agregarAlHistorial = (nuevoRegistro: RegistroSintomas) => {
   historial.value.push(nuevoRegistro)
   localStorage.setItem('historialSintomas', JSON.stringify(historial.value))
-}
-
-// Función para formatear los síntomas en un string legible
-function formatearSintomas(sintomas: Record<string, string>): string {
-  return Object.entries(sintomas)
-    .map(([clave, valor]) => `${clave}: ${valor}`)
-    .join(', ')
 }
 </script>
 
@@ -55,35 +50,22 @@ function formatearSintomas(sintomas: Record<string, string>): string {
 .historial {
   padding: 1.5rem;
   margin-top: 2rem;
-  background-color: #e8f5e9; /* verde muy claro */
+  background-color: #dd3a3a;
   border-radius: 1rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
 }
-
-h2 {
-  color: #2e7d32;
-  margin-bottom: 1rem;
-}
-
 .sin-registros {
-  color: #009999;
-  font-style: italic;
+  color: #888;
 }
-
 .registro {
   margin: 1rem 0;
   padding: 1rem;
-  background-color: #009999; /* verde pastel */
+  background-color: #5676b6;
   border-radius: 0.5rem;
-  border: 1px solid #00ec82bc;
-  text-align: left;
+  border: 1px solid #ddd;
 }
-
 h3 {
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  color: #fdfdfd;
+  font-size: 1.2rem;
 }
 </style>
-
