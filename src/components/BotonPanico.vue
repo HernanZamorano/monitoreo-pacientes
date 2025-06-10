@@ -30,7 +30,7 @@ function activarPanico() {
 }
 .boton {
   padding: 1rem 2rem;
-  background-color: rgb(255, 62, 62);
+  background-color: red;
   color: white;
   font-size: 1.2rem;
   border: none;

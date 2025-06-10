@@ -23,9 +23,9 @@ const puntaje = computed(() => {
   const valores = Object.values(props.sintomas)
 
   return valores.reduce((acc, sintoma) => {
-    if (sintoma === 'Leve') return acc + 1
-    if (sintoma === 'Moderado') return acc + 2
-    if (sintoma === 'Grave') return acc + 3
+    if (sintoma === 'leve') return acc + 1
+    if (sintoma === 'moderado') return acc + 2
+    if (sintoma === 'grave') return acc + 3
     return acc
   }, 0)
 })
@@ -57,8 +57,8 @@ const mensaje = computed(() => {
   text-align: center;
   padding: 2rem;
   border-radius: 1rem;
-  background-color: #63ccccf6;
-  border: 1px solid #3a5644;
+  background-color: #362598;
+  border: 1px solid #ccc;
 }
 .circulo {
   width: 60px;
@@ -67,13 +67,13 @@ const mensaje = computed(() => {
   margin: 1rem auto;
 }
 .verde {
-  background-color: #15fc00;
+  background-color: #2ecc71;
 }
 .amarillo {
-  background-color: #fff01a;
+  background-color: #f1c40f;
 }
 .rojo {
-  background-color: #ff0101;
+  background-color: #e74c3c;
 }
 .mensaje {
   font-weight: bold;
