@@ -78,17 +78,35 @@ button:focus-visible {
   text-align: center;
 }
 
+/* Estilos para selects y opciones */
+select, select option {
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+  border: 1px solid var(--primary-green-light);
+  border-radius: 6px;
+  padding: 0.4rem;
+  font-family: inherit;
+}
+
 /* Tema claro */
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--text-dark);
     background-color: var(--bg-light);
   }
+
   a:hover {
     color: var(--primary-green-dark);
   }
+
   button {
     background-color: var(--primary-green);
     color: white;
+  }
+
+  select, select option {
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    border: 1px solid var(--primary-green-light);
   }
 }
