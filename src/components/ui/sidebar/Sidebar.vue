@@ -40,7 +40,7 @@
     <!-- Acciones en el pie -->
     <div class="mt-auto">
       <ul class="nav flex-column">
-        <li class="nav-item mb-1">
+        <!-- <li class="nav-item mb-1">
           <a
             href="javascript:void(0)"
             class="nav-link btn btn-light w-100 text-start d-flex align-items-center"
@@ -55,7 +55,7 @@
             />
             Mi perfil
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a
             href="javascript:void(0)"
