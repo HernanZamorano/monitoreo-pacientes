@@ -24,6 +24,7 @@ import {
   createRegistroDiario,
   fetchDetalleSintomas,
 } from "@/services/historialService";
+import { useToast } from "vue-toast-notification";
 import $style from "./MonitoreoPacientes.module.scss";
 
 interface SintomaState {
@@ -37,6 +38,7 @@ const pacienteId = 1; // o dinámico via useRoute()
 
 // El estado de la tabla: clave → objeto con activo, valor, tipo, id
 const sintomas = ref<Record<string, SintomaState>>({});
+const toast = useToast();
 
 onMounted(async () => {
   // 1) Traer del backend
@@ -91,46 +93,51 @@ async function submitForm() {
     }
   });
 
-  await Promise.all(tareas);
+  try {
+    await Promise.all(tareas);
 
-  // 💡 Ahora calculas la valoración y el estado
-  const detalles = await fetchDetalleSintomas(pacienteId, fecha);
-  // Calcula la valoración sumando puntuaciones según tipo y valor
-  let valoracion = 0;
-  detalles.forEach((d) => {
-    // Busca el síntoma en la lista para obtener puntuación base
-    const sintoma = Object.values(sintomas.value).find(
-      (s) => s.id === d.sintoma_id
-    );
-    let puntaje = sintoma ? 0 : 0;
-    if (sintoma) {
-      if (sintoma.tipo === "nivel") {
-        puntaje =
-          d.valor === "Leve"
+    // cálculo de valoración y estado…
+    const detalles = await fetchDetalleSintomas(pacienteId, fecha);
+    let valoracion = 0;
+    detalles.forEach((d) => {
+      const sintoma = Object.values(sintomas.value).find(
+        (x) => x.id === d.sintoma_id
+      )!;
+      valoracion +=
+        sintoma.tipo === "nivel"
+          ? d.valor === "Leve"
             ? 1
             : d.valor === "Moderado"
             ? 2
-            : d.valor === "Grave"
-            ? 3
-            : 0;
-      } else {
-        // Para numéricos, puedes ajustar la lógica según tu negocio
-        puntaje = Number(d.valor) ? 1 : 0;
-      }
-    }
-    valoracion += puntaje;
-  });
-  const estado =
-    valoracion < 20 ? "verde" : valoracion < 50 ? "amarillo" : "rojo";
+            : 3
+          : Number(d.valor)
+          ? 1
+          : 0;
+    });
+    const estado =
+      valoracion < 20 ? "verde" : valoracion < 50 ? "amarillo" : "rojo";
 
-  // Inserta el resumen diario
-  await createRegistroDiario({
-    paciente_id: pacienteId,
-    fecha,
-    valoracion,
-    estado,
-  });
+    await createRegistroDiario({
+      paciente_id: pacienteId,
+      fecha,
+      valoracion,
+      estado,
+    });
 
-  limpiarTodos();
+    limpiarTodos();
+
+    toast.success("¡Síntomas enviados correctamente!", {
+      position: "top-right",
+      duration: 8000,
+      dismissible: true,
+    });
+  } catch (e) {
+    console.error("Error al guardar síntomas:", e);
+    toast.error("Error al enviar síntomas. Intenta de nuevo.", {
+      position: "top-right",
+      duration: 8000,
+      dismissible: true,
+    });
+  }
 }
 </script>

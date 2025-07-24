@@ -268,6 +268,13 @@
       "sintoma_id": 8,
       "valor": "Grave",
       "id": 14
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 10,
+      "valor": "Grave",
+      "id": 15
     }
   ],
   "registros_sintomas_diarios": [
@@ -305,6 +312,13 @@
       "valoracion": 32,
       "estado": "amarillo",
       "id": 5
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "valoracion": 35,
+      "estado": "amarillo",
+      "id": 6
     }
   ],
   "indicaciones": [
