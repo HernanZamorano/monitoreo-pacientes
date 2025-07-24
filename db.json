@@ -1,86 +1,141 @@
 {
-  "registros": [
-    {
-      "fecha": "6/20/2025, 8:30:49 PM",
-      "sintomas": {
-        "tos": "Leve",
-        "fiebre": "Leve"
-      },
-      "id": 1
-    },
-    {
-      "fecha": "6/20/2025, 8:59:55 PM",
-      "sintomas": {
-        "fiebre": "Grave"
-      },
-      "id": 2
-    },
-    {
-      "fecha": "6/20/2025, 9:04:06 PM",
-      "sintomas": {
-        "nauseas": "Grave",
-        "sudoracionExcesiva": "Grave",
-        "mareos": "Grave",
-        "palpitaciones": "Grave"
-      },
-      "id": 3
-    }
-  ],
   "usuarios": [
     {
-      "id": "7b92",
-      "rut": "9.765.432-1",
-      "nombre": "Ricardo solar",
-      "email": "A@a.com",
-      "password": "654321",
-      "genero": "masculino",
-      "fechaNacimiento": "2025-06-11",
-      "telefono": "+56912345678",
-      "rol": "paciente"
-    },
-    {
-      "id": "b5e9",
-      "rut": "1.234.678-9",
-      "nombre": "Hernan",
-      "email": "aa@a.com",
-      "password": "123456789",
-      "genero": "masculino",
-      "fechaNacimiento": "2025-06-05",
-      "telefono": "+56998765432",
-      "rol": ""
-    },
-    {
-      "id": "22ec",
+      "id": 1,
       "rut": "12.345.678-9",
-      "nombre": "Hernan",
-      "email": "aaa@a.com",
-      "password": "123456789",
+      "nombre": "Juan Pérez",
+      "clave": "secreto123",
+      "tipo_usuario": "paciente",
+      "email": "juan.perez@ejemplo.com",
       "genero": "masculino",
-      "fechaNacimiento": "2025-06-11",
-      "telefono": "+56998765432",
-      "rol": ""
+      "fecha_nacimiento": "1978-04-12",
+      "telefono": "+56912345678"
     },
     {
-      "id": "04fb",
-      "rut": "11.111.111-1",
-      "nombre": "Cualquiera",
-      "email": "aaaaa@aa.com",
-      "password": "123456789",
-      "genero": "masculino",
-      "fechaNacimiento": "2017-05-09",
-      "telefono": "+5698888888",
-      "rol": ""
-    },
-    {
+      "id": 2,
       "rut": "20.023.898-2",
-      "nombre": "name",
+      "nombre": "devqa",
       "email": "test@localhost.cl",
-      "password": "1234567890",
-      "genero": "otro",
-      "fechaNacimiento": "2025-06-18",
-      "telefono": "+56981599872",
-      "rol": "",
-      "id": "cXaSCIT"
+      "password": "-&328c[Qd'A3",
+      "genero": "masculino",
+      "fecha_nacimiento": "2025-07-10",
+      "telefono": "+56912341234",
+      "rol": ""
+    }
+  ],
+  "medico_funcionario": [
+    {
+      "id": 1,
+      "usuario_id": 2,
+      "profesion": "Médico General",
+      "telefono": "+56912345678",
+      "email": "medico@clinica.cl",
+      "unidad_referencia_id": 1
+    }
+  ],
+  "pacientes": [
+    {
+      "id": 1,
+      "usuario_id": 1,
+      "direccion": "Calle Falsa 123",
+      "telefono": "+56987654321",
+      "fecha_nacimiento": "1980-05-10",
+      "fecha_diagnostico": "2025-06-20"
+    }
+  ],
+  "paciente_medico": [
+    {
+      "paciente_id": 1,
+      "medico_id": 1
+    }
+  ],
+  "unidades_referencia": [
+    {
+      "id": 1,
+      "nombre": "CESFAM Central",
+      "direccion": "Av. Salud 456",
+      "tipo": "cesfam",
+      "telefono": "+56911223344"
+    }
+  ],
+  "sintomas": [
+    {
+      "id": 1,
+      "nombre": "tos",
+      "puntuacion": 5
+    }
+  ],
+  "paciente_sintoma": [
+    {
+      "paciente_id": 1,
+      "fecha": "2025-06-20",
+      "sintoma_id": 1
+    }
+  ],
+  "registros_sintomas_diarios": [
+    {
+      "id": 1,
+      "paciente_id": 1,
+      "fecha": "2025-06-20",
+      "valoracion": 5,
+      "estado": "verde"
+    }
+  ],
+  "indicaciones": [
+    {
+      "id": 1,
+      "paciente_id": 1,
+      "descripcion": "Tomar medicamento X",
+      "horarios": "08:00, 20:00"
+    }
+  ],
+  "bitacora": [
+    {
+      "id": 1,
+      "paciente_id": 1,
+      "fecha": "2025-06-20T21:00:00Z",
+      "profesional_id": 1,
+      "comentario": "Evolución favorable"
+    }
+  ],
+  "diagnosticos": [
+    {
+      "id": 1,
+      "paciente_id": 1,
+      "fecha": "2025-06-11"
+    }
+  ],
+  "patologias": [
+    {
+      "id": 1,
+      "nombre": "Hipertensión"
+    }
+  ],
+  "diagnostico_patologias": [
+    {
+      "id": 1,
+      "diagnostico_id": 1,
+      "patologia_id": 1
+    }
+  ],
+  "alertas": [
+    {
+      "id": 1,
+      "paciente_id": 1,
+      "fecha": "2025-06-20",
+      "motivo": "Paciente en rojo",
+      "registro_sintomas_id": 1,
+      "profesional_notificado": 1
+    }
+  ],
+  "boton_panico": [
+    {
+      "id": 1,
+      "paciente_id": 1,
+      "fecha": "2025-06-20T21:05:00Z",
+      "estado_alerta": "Activa",
+      "profesional_notificado": 1,
+      "fecha_atencion": null
     }
   ]
 }
