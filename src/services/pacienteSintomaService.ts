@@ -1,14 +1,15 @@
 // src/services/pacienteSintomaService.ts
-import API from './api';
+import API from "./api";
 
 export interface PacienteSintomaPayload {
   paciente_id: number;
-  fecha: string;        // 'YYYY-MM-DD'
+  fecha: string; // 'YYYY-MM-DD'
   sintoma_id: number;
+  valor: string; // <--- nuevo
 }
 
 export function createPacienteSintoma(
   payload: PacienteSintomaPayload
 ): Promise<PacienteSintomaPayload> {
-  return API.post('/paciente_sintoma', payload).then(res => res.data);
+  return API.post("/paciente_sintoma", payload).then((res) => res.data);
 }

@@ -63,13 +63,211 @@
       "id": 1,
       "nombre": "tos",
       "puntuacion": 5
+    },
+    {
+      "id": 2,
+      "nombre": "fiebre",
+      "puntuacion": 5
+    },
+    {
+      "id": 3,
+      "nombre": "temperatura",
+      "puntuacion": 1
+    },
+    {
+      "id": 4,
+      "nombre": "frecuenciaCardiaca",
+      "puntuacion": 1
+    },
+    {
+      "id": 5,
+      "nombre": "saturacionOxigeno",
+      "puntuacion": 1
+    },
+    {
+      "id": 6,
+      "nombre": "dolorCabeza",
+      "puntuacion": 5
+    },
+    {
+      "id": 7,
+      "nombre": "dificultadRespirar",
+      "puntuacion": 5
+    },
+    {
+      "id": 8,
+      "nombre": "fatiga",
+      "puntuacion": 5
+    },
+    {
+      "id": 9,
+      "nombre": "escalofrios",
+      "puntuacion": 5
+    },
+    {
+      "id": 10,
+      "nombre": "congestionNasal",
+      "puntuacion": 5
+    },
+    {
+      "id": 11,
+      "nombre": "dolorGarganta",
+      "puntuacion": 5
+    },
+    {
+      "id": 12,
+      "nombre": "perdidaOlfato",
+      "puntuacion": 5
+    },
+    {
+      "id": 13,
+      "nombre": "perdidaGusto",
+      "puntuacion": 5
+    },
+    {
+      "id": 14,
+      "nombre": "nauseas",
+      "puntuacion": 5
+    },
+    {
+      "id": 15,
+      "nombre": "vomitos",
+      "puntuacion": 5
+    },
+    {
+      "id": 16,
+      "nombre": "diarrea",
+      "puntuacion": 5
+    },
+    {
+      "id": 17,
+      "nombre": "dolorPecho",
+      "puntuacion": 5
+    },
+    {
+      "id": 18,
+      "nombre": "sudoracionExcesiva",
+      "puntuacion": 5
+    },
+    {
+      "id": 19,
+      "nombre": "mareos",
+      "puntuacion": 5
+    },
+    {
+      "id": 20,
+      "nombre": "palpitaciones",
+      "puntuacion": 5
+    },
+    {
+      "id": 21,
+      "nombre": "dolorArticular",
+      "puntuacion": 5
+    },
+    {
+      "id": 22,
+      "nombre": "insomnio",
+      "puntuacion": 5
     }
   ],
   "paciente_sintoma": [
     {
+      "id": 1,
       "paciente_id": 1,
       "fecha": "2025-06-20",
-      "sintoma_id": 1
+      "sintoma_id": 1,
+      "valor": "Grave"
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 1,
+      "valor": "Moderado",
+      "id": 2
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 2,
+      "valor": "Moderado",
+      "id": 3
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 1,
+      "valor": "Moderado",
+      "id": 4
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 2,
+      "valor": "Grave",
+      "id": 5
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 13,
+      "valor": "Grave",
+      "id": 6
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 1,
+      "valor": "Grave",
+      "id": 7
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 2,
+      "valor": "Grave",
+      "id": 8
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 20,
+      "valor": "Grave",
+      "id": 9
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 1,
+      "valor": "Moderado",
+      "id": 10
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 15,
+      "valor": "Moderado",
+      "id": 11
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 1,
+      "valor": "Moderado",
+      "id": 12
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 11,
+      "valor": "Moderado",
+      "id": 13
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "sintoma_id": 8,
+      "valor": "Grave",
+      "id": 14
     }
   ],
   "registros_sintomas_diarios": [
@@ -79,6 +277,34 @@
       "fecha": "2025-06-20",
       "valoracion": 5,
       "estado": "verde"
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "valoracion": 25,
+      "estado": "amarillo",
+      "id": 2
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "valoracion": 27,
+      "estado": "amarillo",
+      "id": 3
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "valoracion": 29,
+      "estado": "amarillo",
+      "id": 4
+    },
+    {
+      "paciente_id": 1,
+      "fecha": "2025-07-24",
+      "valoracion": 32,
+      "estado": "amarillo",
+      "id": 5
     }
   ],
   "indicaciones": [

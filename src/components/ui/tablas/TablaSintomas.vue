@@ -20,7 +20,7 @@
       </button>
     </div>
 
-    <form @submit.prevent="$emit('submit')">
+    <form @submit.prevent="$emit('submit-sintomas')">
       <table class="table table-striped table-bordered align-middle">
         <thead class="table-success">
           <tr>
@@ -61,20 +61,18 @@
       </table>
 
       <div class="text-center">
-        <button class="btn btn-success" type="submit">
-          Enviar Síntomas
-        </button>
+        <button class="btn btn-success" type="submit">Enviar Síntomas</button>
       </div>
     </form>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits } from "vue";
 
 interface Sintoma {
   activo: boolean;
-  tipo: 'nivel' | 'numerico';
+  tipo: "nivel" | "numerico";
   valor: string;
 }
 
@@ -84,13 +82,12 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: 'select-all'): void;
-  (e: 'clear-all'): void;
-  (e: 'submit'): void;
+  (e: "select-all"): void;
+  (e: "clear-all"): void;
+  (e: "submit-sintomas"): void;
 }>();
 
 /** Formatea la clave a un título legible */
 const formatear = (str: string) =>
-  str.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase());
+  str.replace(/([A-Z])/g, " $1").replace(/^./, (s) => s.toUpperCase());
 </script>
-
